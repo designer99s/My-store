@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>درة الستائر | أناقة وإتقان</title>
     <!-- Google Fonts -->
-    <link href="blob:https://web.whatsapp.com/39fae455-c05d-4a0f-83cb-b36f00e0d905">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 (Free Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -56,21 +56,21 @@
             padding: 18px 0;
             flex-wrap: wrap;
         }
-        .logo h1 {
-            font-size: 1.9rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #a77542, #c99e6f);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .logo span {
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: #b28b5e;
-            display: block;
-            letter-spacing: 0;
+        .logo img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #a77542;
         }
         .nav-links {
             display: flex;
@@ -378,6 +378,9 @@
             .section-title {
                 font-size: 1.9rem;
             }
+            .logo img {
+                height: 45px;
+            }
         }
         @media (max-width: 640px) {
             .container {
@@ -395,7 +398,9 @@
     <div class="container">
         <div class="nav-bar">
             <div class="logo">
-                <h1>ستارة درة <span>• elegance & quality</span></h1>
+                <!-- ⭐ هنا الصورة الخاصة بالشعار - استبدل الرابط بصورة متجرك -->
+                <img src="https://placehold.co/200x80/dbb47a/ffffff?text=شعارك+هنا" alt="شعار درة الستائر" id="storeLogo">
+                <span class="logo-text">درة الستائر</span>
             </div>
             <div class="menu-icon" id="menuToggle">
                 <i class="fas fa-bars"></i>
@@ -418,9 +423,13 @@
                 <div class="badge">#ستائر_فاخرة</div>
                 <h2>أفخم الستائر<br>لمساحات تحكي أناقتك</h2>
                 <p>تصاميم حصرية، أقمشة عالمية، وتفصيل حسب الطلب. حول منزلك إلى لوحة فنية مع درة الستائر.</p>
+                <div class="btn-group">
+                    <button class="btn-primary" onclick="scrollToContact()">اطلب استشارة مجانية</button>
+                    <button class="btn-outline" onclick="alert('📞 اتصل بنا: 054 000 0000 | نتواصل معك فوراً')">اتصل بنا</button>
+                </div>
             </div>
             <div class="hero-image">
-                <img src="https://tsrolls.com/wp-content/uploads/2025/01/gray-curtains-modern-white-home-interior_961875-268078.webp">
+                <img src="https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=800&h=550&fit=crop" alt="ستارة فاخرة - غرفة أنيقة">
             </div>
         </div>
     </section>
@@ -482,6 +491,7 @@
             <p>فريقنا متخصص بتصميم وتركيب الستائر التي تعكس ذوقك الرفيع. تواصل معنا لأخذ قياسات مجانية واستشارة أولية.</p>
             <div class="contact-info">
                 <div><i class="fas fa-phone-alt"></i> 055 123 4567</div>
+                <div><i class="fab fa-whatsapp"></i> 050 987 6543</div>
                 <div><i class="fas fa-map-marker-alt"></i> الرياض - طريق الملك فهد</div>
             </div>
             <button class="btn-primary" style="margin-top: 32px; background: #f1cf9b; color:#4e3a28;" onclick="alert('شكراً لاهتمامك! سيتم التواصل معكم قريباً. ☎️')">اطلب معاينة الآن</button>
@@ -511,12 +521,12 @@
     // معرض صور فخم وجميل - صور عالية الجودة لستائر حقيقية
     const galleryContainer = document.getElementById('galleryContainer');
     const galleryItems = [
-        { name: 'ستائر مخمل ذهبي - كلاسيك فاخر', img: 'https://m.media-amazon.com/images/I/81dKPYe-OQL._AC_UF1000,1000_QL80_.jpg' },
-        { name: 'ستائر كتان طبيعي - أناقة عصرية', img: 'https://www.intexhome.store/cdn/shop/files/512i33pGmkL_a3cde29c-c644-4c37-b8b0-17bb8ac0cf4c.jpg?v=1719252803&width=1445' },
-        { name: 'ستائر معتمة عازلة - رمادي أنيق', img: 'https://cdn.salla.sa/WlzmGj/1k9yHbQMDkWRWjxJ3DNkO829df9kHBLxtJRzVKFS.jpg' },
-        { name: 'ستائر شيفون شفافة - لمسة رومانسية', img: 'https://api.shatta.com/storage/1397/315_CURT_ET_L_rings1-ezgif.com-jpg-to-webp-converter.webp' },
-        { name: 'ستائر رومانية راقية - لغرف المعيشة', img: 'https://cdn.salla.sa/qQDelA/30d546ac-8dd0-4216-af28-6293fa36e5d1-500x500-sGmIgyQIY7ydoAjyYQeFx1xIL63UxBhBUtBr72kL.jpg' },
-        { name: 'ستائر مودرن ثلاثية الأبعاد', img: 'https://api.shatta.com/storage/1465/ezgif.com-png-to-webp-converter-(17).webp' }
+        { name: 'ستائر مخمل ذهبي - كلاسيك فاخر', img: 'https://images.unsplash.com/photo-1509647645664-4e6ef43ac7f1?w=600&h=450&fit=crop' },
+        { name: 'ستائر كتان طبيعي - أناقة عصرية', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd6?w=600&h=450&fit=crop' },
+        { name: 'ستائر معتمة عازلة - رمادي أنيق', img: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a2e?w=600&h=450&fit=crop' },
+        { name: 'ستائر شيفون شفافة - لمسة رومانسية', img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=450&fit=crop' },
+        { name: 'ستائر رومانية راقية - لغرف المعيشة', img: 'https://images.unsplash.com/photo-1616046229478-9901c5535c45?w=600&h=450&fit=crop' },
+        { name: 'ستائر مودرن ثلاثية الأبعاد', img: 'https://images.unsplash.com/photo-1615807713086-8b1b6f2a2b0c?w=600&h=450&fit=crop' }
     ];
 
     function buildGallery() {
@@ -536,6 +546,13 @@
     }
     buildGallery();
 
+    // تحديث الصورة لوضع شعار حقيقي (اختياري)
+    // يمكنك استبدال الصورة الافتراضية بصورة شعارك عن طريق رفعها واستبدال الرابط
+    const logoImg = document.getElementById('storeLogo');
+    // مثال: إذا أردت تغيير الصورة ديناميكياً:
+    // logoImg.src = "رابط_صورتك_الحقيقية.png";
+    
+    // تفعيل الروابط النشطة عند التمرير
     const sections = document.querySelectorAll('section, div[id]');
     const navItems = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
