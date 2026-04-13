@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>درة الستائر | أناقة وإتقان</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (Free Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fefcf7;
+            color: #2c2b28;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* custom scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e9e2d4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b28b5e;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(255, 252, 245, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #f0e5d8;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #a77542, #c99e6f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #b28b5e;
+            display: block;
+            letter-spacing: 0;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #3e3a34;
+            transition: 0.2s;
+            font-size: 1.05rem;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #b87c4a;
+            border-bottom: 2px solid #dbb47a;
+            padding-bottom: 6px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #7e5a3a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(112deg, #faf3e8 0%, #fff7ef 100%);
+            padding: 70px 0 60px;
+            border-radius: 0 0 48px 48px;
+            margin-bottom: 40px;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text .badge {
+            background: #e5d5c0;
+            color: #8b5a2e;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+        .hero-text h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #2d2b26;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #5f5b54;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #b28b5e;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 6px 14px rgba(150, 100, 50, 0.2);
+        }
+        .btn-primary:hover {
+            background: #9b7349;
+            transform: translateY(-3px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #c7ad87;
+            padding: 10px 26px;
+            border-radius: 40px;
+            font-weight: 700;
+            color: #8b5a2e;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-outline:hover {
+            background: #f5ede2;
+            border-color: #b28b5e;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+        }
+        /* placeholder if image missing */
+        .img-placeholder {
+            background: #e2d5c6;
+            width: 100%;
+            border-radius: 32px;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #8e745a;
+        }
+
+        /* categories / services */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 60px 0 20px;
+            color: #2e2a24;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: #dbb47a;
+            display: block;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin: 40px 0 20px;
+        }
+        .cat-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+            border: 1px solid #f1e9df;
+        }
+        .cat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -12px rgba(100, 70, 40, 0.15);
+            border-color: #ecdbba;
+        }
+        .cat-card i {
+            font-size: 3rem;
+            color: #c28a56;
+            margin-bottom: 18px;
+        }
+        .cat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .cat-card p {
+            color: #6b6258;
+        }
+
+        /* Gallery / Portfolio */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            background: #ede3d7;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.6), transparent);
+            width: 100%;
+            padding: 20px 12px 12px;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* About / Features */
+        .about-section {
+            background: #f8f2ea;
+            border-radius: 48px;
+            padding: 50px 40px;
+            margin: 70px 0;
+        }
+        .about-flex {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1.2;
+        }
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+        .about-text p {
+            margin-bottom: 20px;
+            color: #4a443c;
+        }
+        .features-list {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+        .feature i {
+            color: #c28a56;
+        }
+
+        /* Contact / CTA */
+        .contact-section {
+            background: #2e2a24;
+            color: #fdf6ed;
+            border-radius: 40px;
+            padding: 48px 32px;
+            text-align: center;
+            margin: 60px 0 50px;
+        }
+        .contact-section h3 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .contact-section p {
+            margin-bottom: 28px;
+            opacity: 0.85;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            background: #3f3a33;
+            padding: 10px 24px;
+            border-radius: 60px;
+        }
+        .contact-info i {
+            font-size: 1.3rem;
+            color: #e4bc8c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #e7dfd3;
+            margin-top: 30px;
+            color: #6b5e4e;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                gap: 18px;
+                padding: 20px 0;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .hero-text h2 {
+                font-size: 2.3rem;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 18px;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="nav-bar">
+            <div class="logo">
+                <h1>ستارة درة <span>• elegance & quality</span></h1>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active">الرئيسية</a></li>
+                <li><a href="#categories">المجموعات</a></li>
+                <li><a href="#gallery">معرض الأعمال</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="badge">#ستائر_فاخرة</div>
+                <h2>أفخم الستائر<br>لمساحات تحكي أناقتك</h2>
+                <p>تصاميم حصرية، أقمشة عالمية، وتفصيل حسب الطلب. حول منزلك إلى لوحة فنية مع درة الستائر.</p>
+                <div class="btn-group">
+                    <button class="btn-primary" onclick="scrollToContact()">اطلب استشارة مجانية</button>
+                    <button class="btn-outline" onclick="alert('📞 اتصل بنا: 054 000 0000 | نتواصل معك فوراً')">اتصل بنا</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- صورة توضيحية (يمكنك استبدال الرابط بصورة حقيقية لمتجرك) -->
+                <img src="https://placehold.co/600x450/f3e9de/c7a16b?text=ستائر+فاخرة" alt="ستائر فاخرة" onerror="this.src='https://placehold.co/600x450/e2cfb5/8b5a2e?text=ستارة+مثالية'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <div class="container" id="categories">
+        <div class="section-title">مجموعاتنا المميزة</div>
+        <div class="categories-grid">
+            <div class="cat-card">
+                <i class="fas fa-velvet"></i>
+                <h3>مخمل فاخر</h3>
+                <p>لمسة ملكية فخمة بأقمشة مخملية ناعمة</p>
+            </div>
+            <div class="cat-card">
+                <i class="fas fa-sun"></i>
+                <h3>ستائر عازلة</h3>
+                <p>حماية من الضوء والحرارة بتقنية متطورة</p>
+            </div>
+            <div class="cat-card">
+                <i class="fas fa-feather-alt"></i>
+                <h3>كتان طبيعي</h3>
+                <p>بساطة أنيقة وراحة صيفية فائقة</p>
+            </div>
+            <div class="cat-card">
+                <i class="fas fa-blinds"></i>
+                <h3>ستائر رومانية</h3>
+                <p>تصميم عملي وجذاب للمجالس والغرف</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery / Portfolio -->
+    <div class="container" id="gallery">
+        <div class="section-title">أعمالنا الفنية</div>
+        <div class="gallery" id="galleryContainer">
+            <!-- سيتم تعبئة المعرض بواسطة JS لإضافة صور افتراضية مع أسماء -->
+        </div>
+    </div>
+
+    <!-- About + features -->
+    <div class="container" id="about">
+        <div class="about-section">
+            <div class="about-flex">
+                <div class="about-text">
+                    <h3>لماذا "درة الستائر"؟</h3>
+                    <p>نحن لسنا مجرد محل ستائر، بل نصنع هوية بصرية لمساحاتك. نقدم استشارات تصميم احترافية، أجود أنواع الأقمشة من أفضل البيوت العالمية، مع فريق تركيب متخصص لضمان نتيجة مثالية.</p>
+                    <div class="features-list">
+                        <div class="feature"><i class="fas fa-check-circle"></i> ضمان 5 سنوات</div>
+                        <div class="feature"><i class="fas fa-ruler-combined"></i> قياس وتركيب مجاني</div>
+                        <div class="feature"><i class="fas fa-palette"></i> أكثر من 300 لون وتصميم</div>
+                    </div>
+                </div>
+                <div style="flex: 0.8; text-align: center;">
+                    <i class="fas fa-store" style="font-size: 7rem; color: #dbb47a; opacity: 0.6;"></i>
+                    <p style="margin-top: 12px; font-weight: 500;">خبرة تتجاوز 12 عاماً</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact / CTA -->
+    <div class="container" id="contact">
+        <div class="contact-section">
+            <h3>هيا بنا نصنع جمال منزلك</h3>
+            <p>فريقنا متخصص بتصميم وتركيب الستائر التي تعكس ذوقك الرفيع. تواصل معنا لأخذ قياسات مجانية واستشارة أولية.</p>
+            <div class="contact-info">
+                <div><i class="fas fa-phone-alt"></i> 055 123 4567</div>
+                <div><i class="fab fa-whatsapp"></i> 050 987 6543</div>
+                <div><i class="fas fa-map-marker-alt"></i> الرياض - طريق الملك فهد</div>
+            </div>
+            <button class="btn-primary" style="margin-top: 32px; background: #f1cf9b; color:#4e3a28;" onclick="alert('شكراً لاهتمامك! سيتم التواصل معكم قريباً. ☎️')">اطلب معاينة الآن</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 درة الستائر - جميع الحقوق محفوظة | تصميم هوية بصرية عصرية لمتجرك</p>
+        <p style="margin-top: 8px;"><i class="fas fa-heart" style="color: #c28a56;"></i> ستائر تعكس روح المكان</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+
+    // smooth scroll to contact
+    function scrollToContact() {
+        const contactSection = document.getElementById('contact');
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // إضافة معرض صور ديناميكي (يظهر 6 أعمال بصور رمزية مع اسم الستارة)
+    const galleryContainer = document.getElementById('galleryContainer');
+    const galleryItems = [
+        { name: 'ستائر ذهبية - كلاسيك', img: 'https://placehold.co/600x450/e5cfb3/a47848?text=ذهبي+مخمل' },
+        { name: 'روعة الأبيض والكتان', img: 'https://placehold.co/600x450/f3ede4/b28b5e?text=كتان+طبيعي' },
+        { name: 'عازلة رمادي أنيق', img: 'https://placehold.co/600x450/d9cdbc/8f724c?text=عازل+للحرارة' },
+        { name: 'ستائر سحاب - عصرية', img: 'https://placehold.co/600x450/e7d9ca/a57d52?text=مودرن+سادة' },
+        { name: 'فخامة رومانية', img: 'https://placehold.co/600x450/ddcbb6/ab835b?text=روماني+مخطط' },
+        { name: 'ستائر شيفون شفافة', img: 'https://placehold.co/600x450/eadbcb/b48a5a?text=شيفون+أنيق' }
+    ];
+
+    function buildGallery() {
+        galleryContainer.innerHTML = '';
+        galleryItems.forEach(item => {
+            const galleryDiv = document.createElement('div');
+            galleryDiv.className = 'gallery-item';
+            galleryDiv.innerHTML = `
+                <img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.src='https://placehold.co/600x450/e9dccf/bd8f60?text=ستارة+جديدة'">
+                <div class="overlay">${item.name}</div>
+            `;
+            galleryDiv.addEventListener('click', () => {
+                alert(`✨ تصميم "${item.name}" - متوفر بعدة مقاسات وألوان. تواصل للحصول على نسختك الخاصة.`);
+            });
+            galleryContainer.appendChild(galleryDiv);
+        });
+    }
+    buildGallery();
+
+    // active link highlight on scroll (بسيط)
+    const sections = document.querySelectorAll('section, div[id]');
+    const navItems = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollPos = window.scrollY + 150;
+        sections.forEach(section => {
+            if(section.id) {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = section.id;
+                }
+            }
+        });
+        navItems.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href').substring(1);
+            if(href === current) {
+                link.classList.add('active');
+            } else if (current === '' && link.getAttribute('href') === '#') {
+                link.classList.add('active');
+            }
+        });
+    });
+    // slight adjust for hero highlight on start
+    if(window.location.hash === '') document.querySelector('.nav-links a[href="#"]').classList.add('active');
+</script>
+</body>
+</html>
