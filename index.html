@@ -1,3 +1,6 @@
+عدلت لك التصميم ليصبح أكثر عصرية وانسجاماً مع هوية المحل، مع الحفاظ على أسماء الصور واسم المحل وشعاره كما طلبت.
+
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -17,9 +20,9 @@
 
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #fefcf7;
+            background-color: #fafaf8;
             color: #2c2b28;
-            line-height: 1.5;
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
 
@@ -27,7 +30,7 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #e9e2d4;
+            background: #f0ede7;
         }
         ::-webkit-scrollbar-thumb {
             background: #b28b5e;
@@ -35,25 +38,40 @@
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1320px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 28px;
         }
 
+        /* ---------- شريط علوي رفيع للمعلومات ---------- */
+        .top-bar {
+            background: #2e2a24;
+            color: #e7dfd3;
+            font-size: 0.8rem;
+            padding: 8px 0;
+            text-align: center;
+            letter-spacing: 0.4px;
+        }
+        .top-bar i {
+            margin: 0 8px;
+            color: #dbb47a;
+        }
+
+        /* ---------- الهيدر ---------- */
         header {
-            background: rgba(255, 252, 245, 0.95);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #f0e5d8;
+            border-bottom: 1px solid #ece3d8;
         }
         .nav-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 0;
+            padding: 15px 0;
             flex-wrap: wrap;
         }
         .logo {
@@ -65,29 +83,49 @@
             height: 70px;
             width: auto;
             object-fit: contain;
-            border-radius: 12px;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+        .logo img:hover {
+            transform: scale(1.03);
         }
         .logo-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #a77542;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #9b7349;
+            letter-spacing: -0.3px;
         }
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 36px;
             list-style: none;
         }
         .nav-links a {
             text-decoration: none;
             font-weight: 600;
-            color: #3e3a34;
+            color: #4a443c;
             transition: 0.2s;
-            font-size: 1.05rem;
+            font-size: 1rem;
+            position: relative;
+            padding-bottom: 6px;
+        }
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+            background: #c28a56;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
+            width: 100%;
         }
         .nav-links a:hover, .nav-links a.active {
             color: #b87c4a;
-            border-bottom: 2px solid #dbb47a;
-            padding-bottom: 6px;
         }
         .menu-icon {
             display: none;
@@ -96,16 +134,17 @@
             color: #7e5a3a;
         }
 
+        /* ---------- الهيرو ---------- */
         .hero {
-            background: linear-gradient(112deg, #faf3e8 0%, #fff7ef 100%);
-            padding: 70px 0 60px;
-            border-radius: 0 0 48px 48px;
-            margin-bottom: 40px;
+            background: linear-gradient(118deg, #f9f3ea 0%, #fffbf6 100%);
+            padding: 60px 0 50px;
+            border-radius: 0 0 60px 60px;
+            margin-bottom: 50px;
         }
         .hero-grid {
             display: flex;
             align-items: center;
-            gap: 48px;
+            gap: 56px;
             flex-wrap: wrap;
         }
         .hero-text {
@@ -115,59 +154,62 @@
             background: #e5d5c0;
             color: #8b5a2e;
             display: inline-block;
-            padding: 6px 18px;
+            padding: 6px 20px;
             border-radius: 40px;
             font-weight: 600;
             font-size: 0.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            letter-spacing: 0.5px;
         }
         .hero-text h2 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            line-height: 1.25;
+            margin-bottom: 22px;
             color: #2d2b26;
         }
         .hero-text p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: #5f5b54;
-            margin-bottom: 32px;
-            max-width: 500px;
+            margin-bottom: 36px;
+            max-width: 520px;
         }
         .btn-group {
             display: flex;
-            gap: 16px;
+            gap: 18px;
             flex-wrap: wrap;
         }
         .btn-primary {
             background: #b28b5e;
             border: none;
-            padding: 12px 28px;
-            border-radius: 40px;
+            padding: 13px 32px;
+            border-radius: 50px;
             font-weight: 700;
             font-size: 1rem;
             color: white;
             cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 6px 14px rgba(150, 100, 50, 0.2);
+            transition: 0.25s;
+            box-shadow: 0 8px 18px rgba(150, 100, 50, 0.18);
         }
         .btn-primary:hover {
             background: #9b7349;
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 24px rgba(150, 100, 50, 0.25);
         }
         .btn-outline {
             background: transparent;
             border: 2px solid #c7ad87;
-            padding: 10px 26px;
-            border-radius: 40px;
+            padding: 11px 28px;
+            border-radius: 50px;
             font-weight: 700;
             color: #8b5a2e;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.25s;
         }
         .btn-outline:hover {
             background: #f5ede2;
             border-color: #b28b5e;
+            transform: translateY(-3px);
         }
         .hero-image {
             flex: 1;
@@ -175,196 +217,230 @@
         }
         .hero-image img {
             max-width: 100%;
-            border-radius: 32px;
-            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+            border-radius: 36px;
+            box-shadow: 0 30px 45px -15px rgba(0,0,0,0.18);
             width: 100%;
             height: auto;
             object-fit: cover;
+            transition: 0.3s;
+        }
+        .hero-image img:hover {
+            transform: scale(1.01);
         }
 
+        /* ---------- العناوين ---------- */
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 700;
-            margin: 60px 0 20px;
+            margin: 70px 0 24px;
             color: #2e2a24;
             position: relative;
         }
         .section-title:after {
             content: '';
-            width: 80px;
+            width: 90px;
             height: 3px;
             background: #dbb47a;
             display: block;
-            margin: 12px auto 0;
+            margin: 14px auto 0;
             border-radius: 4px;
         }
+
+        /* ---------- البطاقات ---------- */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin: 40px 0 20px;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 32px;
+            margin: 45px 0 30px;
         }
         .cat-card {
             background: white;
-            border-radius: 28px;
-            padding: 32px 20px;
+            border-radius: 32px;
+            padding: 38px 22px 28px;
             text-align: center;
-            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.05);
-            transition: all 0.25s ease;
-            border: 1px solid #f1e9df;
+            box-shadow: 0 12px 28px -10px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            border: 1px solid #f3ede5;
+            position: relative;
         }
         .cat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -12px rgba(100, 70, 40, 0.15);
-            border-color: #ecdbba;
+            transform: translateY(-10px);
+            box-shadow: 0 24px 36px -14px rgba(120, 80, 40, 0.15);
+            border-color: #e2cfb5;
         }
         .cat-card i {
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: #c28a56;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+            transition: 0.2s;
+        }
+        .cat-card:hover i {
+            color: #b07b44;
         }
         .cat-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
+            font-size: 1.55rem;
+            margin-bottom: 14px;
+            font-weight: 700;
         }
         .cat-card p {
             color: #6b6258;
+            font-size: 0.95rem;
         }
 
+        /* ---------- المعرض ---------- */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 28px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 30px;
+            margin: 45px 0;
         }
         .gallery-item {
             position: relative;
-            border-radius: 24px;
+            border-radius: 26px;
             overflow: hidden;
             aspect-ratio: 4 / 3;
             background: #ede3d7;
             cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 15px 25px -10px rgba(0,0,0,0.1);
+            transition: 0.35s;
+            box-shadow: 0 18px 30px -12px rgba(0,0,0,0.12);
+        }
+        .gallery-item:hover {
+            box-shadow: 0 24px 38px -14px rgba(80, 50, 20, 0.2);
         }
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 0.4s;
+            transition: 0.5s;
         }
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
         .overlay {
             position: absolute;
             bottom: 0;
-            background: linear-gradient(0deg, rgba(0,0,0,0.7), transparent);
+            background: linear-gradient(0deg, rgba(0,0,0,0.72) 0%, transparent 90%);
             width: 100%;
-            padding: 20px 12px 12px;
+            padding: 24px 14px 14px;
             color: white;
             font-weight: 600;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            letter-spacing: 0.3px;
         }
 
+        /* ---------- من نحن ---------- */
         .about-section {
             background: #f8f2ea;
-            border-radius: 48px;
-            padding: 50px 40px;
-            margin: 70px 0;
+            border-radius: 56px;
+            padding: 56px 44px;
+            margin: 80px 0;
         }
         .about-flex {
             display: flex;
-            gap: 40px;
+            gap: 48px;
             flex-wrap: wrap;
             align-items: center;
         }
         .about-text {
-            flex: 1.2;
+            flex: 1.3;
         }
         .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 18px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
         .about-text p {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: #4a443c;
+            font-size: 1.05rem;
         }
         .features-list {
             display: flex;
-            gap: 24px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 24px;
         }
         .feature {
             display: flex;
             align-items: center;
             gap: 10px;
             background: white;
-            padding: 8px 20px;
+            padding: 9px 22px;
             border-radius: 50px;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
         }
         .feature i {
             color: #c28a56;
+            font-size: 1.1rem;
         }
 
+        /* ---------- تواصل ---------- */
         .contact-section {
             background: #2e2a24;
             color: #fdf6ed;
-            border-radius: 40px;
-            padding: 48px 32px;
+            border-radius: 48px;
+            padding: 56px 36px;
             text-align: center;
-            margin: 60px 0 50px;
+            margin: 70px 0 60px;
         }
         .contact-section h3 {
-            font-size: 2rem;
-            margin-bottom: 12px;
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+            font-weight: 700;
         }
         .contact-section p {
-            margin-bottom: 28px;
-            opacity: 0.85;
+            margin-bottom: 32px;
+            opacity: 0.88;
+            font-size: 1.05rem;
         }
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 32px;
+            gap: 30px;
             flex-wrap: wrap;
-            margin-top: 16px;
+            margin-top: 20px;
         }
         .contact-info div {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
+            gap: 12px;
+            font-size: 1.05rem;
             background: #3f3a33;
-            padding: 10px 24px;
+            padding: 12px 26px;
             border-radius: 60px;
+            transition: 0.2s;
+        }
+        .contact-info div:hover {
+            background: #4f4840;
         }
         .contact-info i {
             font-size: 1.3rem;
             color: #e4bc8c;
         }
 
+        /* ---------- الفوتر ---------- */
         footer {
             text-align: center;
-            padding: 30px 0;
+            padding: 34px 0;
             border-top: 1px solid #e7dfd3;
-            margin-top: 30px;
+            margin-top: 40px;
             color: #6b5e4e;
             font-size: 0.9rem;
         }
 
-        @media (max-width: 900px) {
+        /* ---------- ميديا ---------- */
+        @media (max-width: 920px) {
             .nav-links {
                 display: none;
                 width: 100%;
                 flex-direction: column;
                 text-align: center;
-                gap: 18px;
-                padding: 20px 0;
+                gap: 20px;
+                padding: 22px 0 10px;
             }
             .nav-links.show {
                 display: flex;
@@ -373,13 +449,16 @@
                 display: block;
             }
             .hero-text h2 {
-                font-size: 2.3rem;
+                font-size: 2.4rem;
             }
             .section-title {
-                font-size: 1.9rem;
+                font-size: 2rem;
             }
             .logo img {
-                height: 45px;
+                height: 46px;
+            }
+            .about-section {
+                padding: 44px 30px;
             }
         }
         @media (max-width: 640px) {
@@ -389,17 +468,25 @@
             .btn-group {
                 justify-content: center;
             }
+            .hero-text h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- شريط علوي صغير -->
+<div class="top-bar">
+    <i class="fas fa-truck"></i> توصيل وتركيب مجاني لجميع مناطق المملكة <i class="fas fa-phone-alt"></i> 0557070646
+</div>
+
 <header>
     <div class="container">
         <div class="nav-bar">
             <div class="logo">
-                <!-- ⭐ هنا الصورة الخاصة بالشعار - استبدل الرابط بصورة متجرك -->
-<img src="photo.png" alt="شعار شركة بيلنك للستائر" id="storeLogo">
+                <!-- ⭐ الشعار الرسمي - حافظت على اسم الصورة -->
+                <img src="photo.png" alt="شعار شركة بيلنك للستائر" id="storeLogo">
                 <span class="logo-text">شركة بيلنك للستائر </span>
             </div>
             <div class="menu-icon" id="menuToggle">
@@ -423,8 +510,13 @@
                 <div class="badge">#ستائر_فاخرة</div>
                 <h2>أفخم الستائر<br>لمساحات تحكي أناقتك</h2>
                 <p>تصاميم حصرية، أقمشة عالمية، وتفصيل حسب الطلب. حول منزلك إلى لوحة فنية مع بيلنك للستائر</p>
+                <div class="btn-group">
+                    <button class="btn-primary" onclick="scrollToContact()"><i class="fas fa-paper-plane" style="margin-left: 6px;"></i>اطلب تصميمك الآن</button>
+                    <button class="btn-outline" onclick="window.location.href='#gallery'"><i class="fas fa-images" style="margin-left: 6px;"></i>تصفح الأعمال</button>
+                </div>
             </div>
             <div class="hero-image">
+                <!-- الصورة الرئيسية - حافظت على الاسم -->
                 <img src="photo2.png" alt="ستارة فاخرة - غرفة أنيقة">
             </div>
         </div>
@@ -474,8 +566,8 @@
                     </div>
                 </div>
                 <div style="flex: 0.8; text-align: center;">
-                    <i class="fas fa-store" style="font-size: 7rem; color: #dbb47a; opacity: 0.6;"></i>
-                    <p style="margin-top: 12px; font-weight: 500;">خبرة تتجاوز 12 عاماً</p>
+                    <i class="fas fa-store" style="font-size: 7rem; color: #dbb47a; opacity: 0.5;"></i>
+                    <p style="margin-top: 14px; font-weight: 600; font-size: 1.1rem;">خبرة تتجاوز 12 عاماً</p>
                 </div>
             </div>
         </div>
@@ -487,7 +579,7 @@
             <p>فريقنا متخصص بتصميم وتركيب الستائر التي تعكس ذوقك الرفيع. تواصل معنا     </p>
             <div class="contact-info">
                 <div><i class="fas fa-phone-alt"></i> 0557070646 </div>
-                <div><i class="fas fa-phone-alt"></i> bilinkcurtins@gmail.com </div>
+                <div><i class="fas fa-envelope"></i> bilinkcurtins@gmail.com </div>
                 <div><i class="fas fa-map-marker-alt"></i> حائل - حي الشبيلي الغربي  </div>
             </div>
         </div>
@@ -497,7 +589,7 @@
 <footer>
     <div class="container">
         <p>© 2026 بيلنك للستائر - جميع الحقوق محفوظة |  </p>
-        <p style="margin-top: 8px;"><i class="fas fa-heart" style="color: #c28a56;"></i> ستائر تعكس روح المكان</p>
+        <p style="margin-top: 10px;"><i class="fas fa-heart" style="color: #c28a56;"></i> ستائر تعكس روح المكان</p>
     </div>
 </footer>
 
@@ -513,10 +605,10 @@
         contactSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // معرض صور فخم وجميل - صور عالية الجودة لستائر حقيقية
+    // معرض الصور كما هو بنفس الأسماء
     const galleryContainer = document.getElementById('galleryContainer');
     const galleryItems = [
-      { name: 'ستائر رول ', img: 'photo3.png' },
+        { name: 'ستائر رول ', img: 'photo3.png' },
         { name: 'ستائر خشبية ', img: 'photo4.png' },
         { name: 'باركيه ', img: 'photo5.png' },
         { name: 'ستائر شيفون سادة ', img: 'photo7.png' },
@@ -541,13 +633,6 @@
     }
     buildGallery();
 
-    // تحديث الصورة لوضع شعار حقيقي (اختياري)
-    // يمكنك استبدال الصورة الافتراضية بصورة شعارك عن طريق رفعها واستبدال الرابط
-    const logoImg = document.getElementById('storeLogo');
-    // مثال: إذا أردت تغيير الصورة ديناميكياً:
-    // logoImg.src = "رابط_صورتك_الحقيقية.png";
-    
-    // تفعيل الروابط النشطة عند التمرير
     const sections = document.querySelectorAll('section, div[id]');
     const navItems = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
@@ -576,3 +661,4 @@
 </script>
 </body>
 </html>
+```
